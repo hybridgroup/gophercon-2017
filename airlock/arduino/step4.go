@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/hybridgroup/gobot"
 	"github.com/hybridgroup/gobot/api"
-	"github.com/hybridgroup/gobot/platforms/gpio"
 	"github.com/hybridgroup/gobot/platforms/firmata"
+	"github.com/hybridgroup/gobot/platforms/gpio"
 )
 
 var button *gpio.GroveButtonDriver
