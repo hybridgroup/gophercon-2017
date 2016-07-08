@@ -95,7 +95,7 @@ func main() {
 
 	robot := gobot.NewRobot("airlock",
 		[]gobot.Connection{board},
-		[]gobot.Device{button, blue, green},
+		[]gobot.Device{button, blue, green, red, buzzer, touch, rotary, sensor},
 		work,
 	)
 

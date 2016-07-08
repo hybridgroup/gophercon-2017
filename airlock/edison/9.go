@@ -43,7 +43,7 @@ func DetectLight(level int) {
 
 func CheckFireAlarm() {
 	temp := sensor.Temperature()
-	fmt.Printf("Current temperature: %d", temp)
+	fmt.Println("Current temperature:", temp)
 	if temp >= 400 {
 		TurnOff()
 		red.On()
@@ -78,6 +78,7 @@ func main() {
 
 	// digital
 	board := edison.NewEdisonAdaptor("edison")
+
 	button = gpio.NewGroveButtonDriver(board, "button", "2")
 	blue = gpio.NewGroveLedDriver(board, "blue", "3")
 	green = gpio.NewGroveLedDriver(board, "green", "4")
@@ -127,7 +128,7 @@ func main() {
 
 	robot := gobot.NewRobot("airlock",
 		[]gobot.Connection{board},
-		[]gobot.Device{button, blue, green},
+		[]gobot.Device{button, blue, green, red, buzzer, touch, rotary, sensor, sound, light},
 		work,
 	)
 

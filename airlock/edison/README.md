@@ -9,22 +9,28 @@ go get -d -u github.com/hybridgroup/gobot/... && && go install github.com/hybrid
 ## Running the code
 When you run any of these examples, you will compile the code on your computer, move the compiled code onto the Intel Edison, and then execute the code on the Intel Edison itself, not on your own computer.
 
+We have included a shell script to make this process easier. You can run it like this:
+
+```
+$ ./runner.sh 1 192.168.1.42
+```
+
 For example, to compile the code:
 
 ```
 $ GOARCH=386 GOOS=linux go build 1.go
 ```
 
-Then to move the code to the Intel Edison:
+Then to move the code to the Intel Edison, you can use the `scp` command:
 
 ```
 $ scp 1 root@<IP of your device>:/home/root/1
 ```
 
-Lastly, to execute it on your Edison (use screen to connect, see the Intel setup steps if you don't recall how to connect)
+Lastly, to execute it on your Edison, you can use the `ssh` command:
 
 ```
-$ ./1
+$ ssh -t root@<IP of your device> '1'
 ```
 
 ## Code
