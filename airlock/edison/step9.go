@@ -44,7 +44,7 @@ func DetectLight(level int) {
 func CheckFireAlarm() {
 	temp := sensor.Temperature()
 	fmt.Println("Current temperature:", temp)
-	if temp >= 400 {
+	if temp >= 40 {
 		TurnOff()
 		red.On()
 		buzzer.Tone(gpio.F4, gpio.Half)
@@ -83,8 +83,8 @@ func main() {
 	blue = gpio.NewGroveLedDriver(board, "blue", "3")
 	green = gpio.NewGroveLedDriver(board, "green", "4")
 	red = gpio.NewGroveLedDriver(board, "red", "5")
-	buzzer = gpio.NewGroveBuzzerDriver(board, "blue", "7")
-	touch = gpio.NewGroveTouchDriver(board, "green", "8")
+	buzzer = gpio.NewGroveBuzzerDriver(board, "buzzer", "7")
+	touch = gpio.NewGroveTouchDriver(board, "touch", "8")
 
 	// analog
 	rotary = gpio.NewGroveRotaryDriver(board, "rotary", "0")
