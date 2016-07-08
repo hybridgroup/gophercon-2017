@@ -16,12 +16,15 @@ type pair struct {
 }
 
 func main() {
+	pwd, _ := os.Getwd()
+	joystickConfig := pwd + "/dualshock3.json"
+
 	gbot := gobot.NewGobot()
 
 	joystickAdaptor := joystick.NewJoystickAdaptor("ps3")
 	joystick := joystick.NewJoystickDriver(joystickAdaptor,
 		"ps3",
-		"./platforms/joystick/configs/dualshock3.json",
+		joystickConfig,
 	)
 
 	droneAdaptor := ble.NewBLEAdaptor("ble", os.Args[1])
@@ -67,7 +70,7 @@ func main() {
 		})
 
 		gobot.Every(10*time.Millisecond, func() {
-			pair := leftStick
+			pair := rightStick
 			if pair.y < -10 {
 				drone.Forward(validatePitch(pair.y, offset))
 			} else if pair.y > 10 {
@@ -86,7 +89,7 @@ func main() {
 		})
 
 		gobot.Every(10*time.Millisecond, func() {
-			pair := rightStick
+			pair := leftStick
 			if pair.y < -10 {
 				drone.Up(validatePitch(pair.y, offset))
 			} else if pair.y > 10 {
