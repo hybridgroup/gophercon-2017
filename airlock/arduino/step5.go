@@ -11,11 +11,11 @@ import (
 	"github.com/hybridgroup/gobot/platforms/gpio"
 )
 
-var button *gpio.GroveButtonDriver
-var blue *gpio.GroveLedDriver
-var green *gpio.GroveLedDriver
+var button *gpio.ButtonDriver
+var blue *gpio.LedDriver
+var green *gpio.LedDriver
 var buzzer *gpio.GroveBuzzerDriver
-var touch *gpio.GroveTouchDriver
+var touch *gpio.ButtonDriver
 
 func Doorbell() {
 	TurnOff()
@@ -45,11 +45,11 @@ func main() {
 	board := firmata.NewFirmataAdaptor("arduino", os.Args[1])
 
 	// digital devices
-	button = gpio.NewGroveButtonDriver(board, "button", "2")
-	blue = gpio.NewGroveLedDriver(board, "blue", "3")
-	green = gpio.NewGroveLedDriver(board, "green", "4")
+	button = gpio.NewButtonDriver(board, "button", "2")
+	blue = gpio.NewLedDriver(board, "blue", "3")
+	green = gpio.NewLedDriver(board, "green", "4")
 	buzzer = gpio.NewGroveBuzzerDriver(board, "buzzer", "7")
-	touch = gpio.NewGroveTouchDriver(board, "touch", "8")
+	touch = gpio.NewButtonDriver(board, "touch", "8")
 
 	work := func() {
 		Reset()

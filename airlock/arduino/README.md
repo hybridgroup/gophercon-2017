@@ -17,13 +17,23 @@ $ go run step1.go /dev/ttyACM0
 
 Substitute the name of the program and the name of your serial port as needed.
 
-The Gobot program will use the serial interface to communicate with a connected Arduino that is running the Firmata sketch. If you need to load Firmata on  your Arduino you can use Gort (http://gort.io)
+The Gobot program will use the serial interface to communicate with a connected Arduino that is running the Firmata sketch. Your Arduino already has Firmata installed for you. If you need to reload Firmata on your Arduino you can use Gort (http://gort.io)
 
 ## Code
 
+First connect the power on the Arduino to the breadboard as follows:
+
+- Connect the 5V power pin on the Arduino to the breadboard's red power rail (+) using a red jumper cable.
+
+- Connect the GND pin on the Arduino to the breadboard's blue ground rail (-) using a black jumper cable.
+
 ### step1.go - Blue LED
 
-Connect the blue LED to D3.
+- Plug a blue LED to pin 3 and pin 4 on the breadboard. Make sure the longer pin of the LED is plugged into pin 3.
+
+- Connect pin 3 on the Arduino to pin 3 on the breadboard. Choose any color of cable besides red or black.
+
+- Connect pin 4 on the breadboard to the breadboard's blue ground rail (-) using a black jumper cable.
 
 Run the code.
 
@@ -31,7 +41,15 @@ You should see the blue LED blink.
 
 ### step2.go - Blue LED, Button
 
-Connect the button to D2.
+- Connect the button to the breadboard so one side connects to pins 7 and 9 on one side of the gap, and connects to pins 7 and 9 on the other side of the gap.
+
+- Connect a red jumper cable from the power rail (+) on the breadboard to pin 7 on the breadboard.
+
+- Connect a 10K Ohm resistor from pin 9 on the breadboard to pin 11 on the breadboard.
+
+- Connect a black jumper cable from the ground rail (-) on the breadboard to pin 11 on the breadboard.
+
+- Connect pin 2 on the Arduino to pin 9 on the breadboard on the opposite side. Choose any color of cable besides red or black.
 
 Run the code.
 
@@ -39,7 +57,11 @@ When you press the button, the blue LED should turn on.
 
 ### step3.go - Blue LED, Button, Green LED
 
-Connect the Green LED to D4.
+- Plug a green LED to pin 13 and pin 14 on the breadboard. Make sure the longer pin of the LED is plugged into pin 13.
+
+- Connect pin 4 on the Arduino to pin 13 on the breadboard. Choose any color of cable besides red or black.
+
+- Connect pin 14 on the breadboard to the breadboard's blue ground rail (-) using a black jumper cable.
 
 Run the code.
 
@@ -53,42 +75,36 @@ Run the code.
 
 You can now point your web browser to `http://localhost:3000` and try out the [Robeaux](https://github.com/hybridgroup/robeaux) web interface.
 
-### step5.go - Blue LED, Button, Green LED, Cylon.js API, Buzzer, Touch
+### step5.go - Blue LED, Button, Green LED, Cylon.js API, Buzzer, Additional Button
 
-Connect the buzzer to D7, and connect the touch sensor to D8.
+- Connect the buzzer to pin 16 on both sides of the breadboard. Make sure the plus (+) is on the left side.
 
-Run the code.
+- Connect pin 16 on the right side of the breadboard to the ground rail (-) on the breadboard.
 
-When your finger touches the capacitive touch sensor, the buzzer should sound.
+- Connect pin 7 on the Arduino to pin 16 on the left side of the breadboard.
 
-### step6.go - Blue LED, Button, Green LED, Cylon.js API, Buzzer, Touch, Dial
+- Connect a second button to the breadboard so one side connects to pins 19 and 21 on one side of the gap, and connects to pins 19 and 21 on the other side of the gap.
 
-Connect the rotary dial to A0.
+- Connect a red jumper cable from the power rail (+) on the breadboard to pin 19 on the breadboard.
 
-Run the code.
+- Connect a 10K Ohm resistor from pin 21 on the breadboard to pin 23 on the breadboard.
 
-Turning the dial will display the current analog reading on your console.
+- Connect a black jumper cable from the ground rail (-) on the breadboard to pin 11 on the breadboard.
 
-### step7.go - Blue LED, Button, Green LED, Cylon.js API, Buzzer, Touch, Dial, Temperature, Red LED
-
-Connect the temperature sensor to A1, and the red LED to D5
+- Connect pin 2 on the Arduino to pin 21 on the breadboard on the opposite side. Choose any color of cable besides red or black.
 
 Run the code.
 
-If the temperature exceeds 400 degrees, then the red led will light up.
+When you press the second button, the buzzer should sound.
 
-### step8.go - Blue LED, Button, Green LED, Cylon.js API, Buzzer, Touch, Dial, Temperature, Red LED, Sound
+### step6.go - Blue LED, Button, Green LED, Cylon.js API, Buzzer, Additional Button, Photoresistor
 
-Connect the sound sensor to A2.
+- Connect the Photoresistor to pin 26 on the breadboard and the power rail (+) on the breadboard.
 
-Run the code.
+- Connect a 10K Ohm resistor from pin 26 on the breadboard to the ground rail (-) on the breadboard.
 
-When a sound is detected, the blue LED will light up, the sound sensor reading will be displayed on your computer's console.
-
-### step9.go - Blue LED, Button, Green LED, Cylon.js API, Buzzer, Touch, Dial, Temperature, Red LED, Sound, Light
-
-Connect the light sensor to A3.
+- Connect pin A0 on the Arduino to pin 26 on the breadboard. Choose any color of cable besides red or black.
 
 Run the code.
 
-When a light is detected, the blue LED will light up, and the light sensor reading will be displayed on your computer's console.
+Changing the light level will display the current analog reading on your console.

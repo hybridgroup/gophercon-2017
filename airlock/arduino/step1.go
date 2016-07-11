@@ -13,9 +13,7 @@ func main() {
 	gbot := gobot.NewGobot()
 
 	board := firmata.NewFirmataAdaptor("arduino", os.Args[1])
-
-	// digital devices
-	blue := gpio.NewGroveLedDriver(board, "blue", "3")
+	blue := gpio.NewLedDriver(board, "blue", "3")
 
 	work := func() {
 		gobot.Every(1*time.Second, func() {

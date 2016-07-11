@@ -10,9 +10,9 @@ import (
 	"github.com/hybridgroup/gobot/platforms/gpio"
 )
 
-var button *gpio.GroveButtonDriver
-var blue *gpio.GroveLedDriver
-var green *gpio.GroveLedDriver
+var button *gpio.ButtonDriver
+var blue *gpio.LedDriver
+var green *gpio.LedDriver
 
 func TurnOff() {
 	blue.Off()
@@ -34,9 +34,9 @@ func main() {
 	board := firmata.NewFirmataAdaptor("arduino", os.Args[1])
 
 	// digital devices
-	button = gpio.NewGroveButtonDriver(board, "button", "2")
-	blue = gpio.NewGroveLedDriver(board, "blue", "3")
-	green = gpio.NewGroveLedDriver(board, "green", "4")
+	button = gpio.NewButtonDriver(board, "button", "2")
+	blue = gpio.NewLedDriver(board, "blue", "3")
+	green = gpio.NewLedDriver(board, "green", "4")
 
 	work := func() {
 		Reset()

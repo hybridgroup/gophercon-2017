@@ -15,8 +15,8 @@ func main() {
 	board := firmata.NewFirmataAdaptor("arduino", os.Args[1])
 
 	// digital devices
-	button := gpio.NewGroveButtonDriver(board, "button", "2")
-	blue := gpio.NewGroveLedDriver(board, "blue", "3")
+	button := gpio.NewButtonDriver(board, "button", "2")
+	blue := gpio.NewLedDriver(board, "blue", "3")
 
 	work := func() {
 		gobot.On(button.Event(gpio.Push), func(data interface{}) {
