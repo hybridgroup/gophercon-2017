@@ -21,6 +21,8 @@ The Gobot program will use the serial interface to communicate with a connected 
 
 ## Code
 
+[![Gobot](https://raw.githubusercontent.com/hybridgroup/gobot-workshop-2016/master/images/arduino/step0.jpg)]
+
 First connect the power on the Arduino to the breadboard as follows:
 
 - Connect the 5V power pin on the Arduino to the breadboard's red power rail (+) using a red jumper cable.
