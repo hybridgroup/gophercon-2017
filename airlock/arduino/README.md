@@ -31,6 +31,8 @@ First connect the power on the Arduino to the breadboard as follows:
 
 ### step1.go - Blue LED
 
+[![Gobot](https://raw.githubusercontent.com/hybridgroup/gobot-workshop-2016/master/images/arduino/step1.jpg)]
+
 - Plug a blue LED to pin 3 and pin 4 on the breadboard. Make sure the longer pin of the LED is plugged into pin 3.
 
 - Connect pin 3 on the Arduino to pin 3 on the breadboard. Choose any color of cable besides red or black.
@@ -42,6 +44,8 @@ Run the code.
 You should see the blue LED blink.
 
 ### step2.go - Blue LED, Button
+
+[![Gobot](https://raw.githubusercontent.com/hybridgroup/gobot-workshop-2016/master/images/arduino/step2.jpg)]
 
 - Connect the button to the breadboard so one side connects to pins 7 and 9 on one side of the gap, and connects to pins 7 and 9 on the other side of the gap.
 
@@ -58,6 +62,8 @@ Run the code.
 When you press the button, the blue LED should turn on.
 
 ### step3.go - Blue LED, Button, Green LED
+
+[![Gobot](https://raw.githubusercontent.com/hybridgroup/gobot-workshop-2016/master/images/arduino/step3.jpg)]
 
 - Plug a green LED to pin 13 and pin 14 on the breadboard. Make sure the longer pin of the LED is plugged into pin 13.
 
@@ -78,6 +84,8 @@ Run the code.
 You can now point your web browser to `http://localhost:3000` and try out the [Robeaux](https://github.com/hybridgroup/robeaux) web interface.
 
 ### step5.go - Blue LED, Button, Green LED, Cylon.js API, Buzzer, Additional Button
+
+[![Gobot](https://raw.githubusercontent.com/hybridgroup/gobot-workshop-2016/master/images/arduino/step5.jpg)]
 
 - Connect the buzzer to pin 16 on both sides of the breadboard. Make sure the plus (+) is on the left side.
 
@@ -100,6 +108,8 @@ Run the code.
 When you press the second button, the buzzer should sound.
 
 ### step6.go - Blue LED, Button, Green LED, Cylon.js API, Buzzer, Additional Button, Photoresistor
+
+[![Gobot](https://raw.githubusercontent.com/hybridgroup/gobot-workshop-2016/master/images/arduino/step6.jpg)]
 
 - Connect the Photoresistor to pin 26 on the breadboard and the power rail (+) on the breadboard.
 
