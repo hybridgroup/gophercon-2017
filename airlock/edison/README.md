@@ -9,7 +9,7 @@ go get -d -u github.com/hybridgroup/gobot/... && && go install github.com/hybrid
 - Connect both USB cables to power and establish a serial connection
 - Run 
 ```
-command ls /dev/cu.usbserial-*
+ls /dev/cu.usbserial-*
 ```
 - Copy the cu.usbserial-XXXXXX that is returned
 - Run 
