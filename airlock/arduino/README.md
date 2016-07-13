@@ -3,7 +3,7 @@
 ## Installation
 
 ```
-go get -d -u github.com/hybridgroup/gobot/... && && go install github.com/hybridgroup/gobot/platforms/firmata
+go get -d -u github.com/hybridgroup/gobot/... && go install github.com/hybridgroup/gobot/platforms/firmata
 ```
 
 ## Running the code
@@ -53,9 +53,9 @@ You should see the blue LED blink.
 
 - Connect a 10K Ohm resistor from pin 9 on the breadboard to pin 11 on the breadboard.
 
-- Connect a black jumper cable from the ground rail (-) on the breadboard to pin 11 on the breadboard.
+- Connect a black jumper cable from the ground rail (-) on the breadboard to pin 23 on the breadboard.
 
-- Connect pin 2 on the Arduino to pin 9 on the breadboard on the opposite side. Choose any color of cable besides red or black.
+- Connect pin 8 on the Arduino to pin 9 on the breadboard on the opposite side. Choose any color of cable besides red or black.
 
 Run the code.
 
