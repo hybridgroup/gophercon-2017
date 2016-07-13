@@ -26,6 +26,20 @@ Follow the directions at the Edison site
 
 or just download the setup from and follow the setup prompts `https://software.intel.com/iot/hardware/edison/downloads`
 
+## Finding and connecting to the Edison - OSX
+- Connect both USB cables to power and establish a serial connection
+- Run 
+```
+command ls /dev/cu.usbserial-*
+```
+- Copy the cu.usbserial-XXXXXX that is returned
+- Run 
+```
+screen /dev/xx.usbserial-XXXXXXXX 115200 –L
+```
+- Press enter twice to login
+- Run ifconfig command and look for wlan0 entry 
+
 ## Running the code
 When you run any of these examples, you will compile the code on your computer, move the compiled code onto the Intel Edison, and then execute the code on the Intel Edison itself, not on your own computer.
 
