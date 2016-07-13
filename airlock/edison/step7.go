@@ -22,7 +22,7 @@ var sensor *gpio.GroveTemperatureSensorDriver
 func CheckFireAlarm() {
 	temp := sensor.Temperature()
 	fmt.Println("Current temperature:", temp)
-	if temp >= 40 {
+	if temp >= 15 {
 		TurnOff()
 		red.On()
 		buzzer.Tone(gpio.F4, gpio.Half)
@@ -82,10 +82,6 @@ func main() {
 
 		gobot.On(touch.Event(gpio.Push), func(data interface{}) {
 			Doorbell()
-		})
-
-		gobot.On(rotary.Event("data"), func(data interface{}) {
-			fmt.Println("rotary", data)
 		})
 
 		gobot.Every(1*time.Second, func() {
