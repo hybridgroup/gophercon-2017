@@ -104,7 +104,11 @@ Connect the temperature sensor to A1, and the red LED to D5
 
 Run the code.
 
-If the temperature exceeds 400 degrees, then the red led will light up.
+By default, if the temperature exceeds 15 degrees, then the red LED will light up.
+In case the room is warmer than 15 degrees, change the default temperature in step7.go.
+
+In order to increase the temperature of the sensor, hold it between your fingers and wait for the LED to light up.
+To turn the LED off, let go of the temperature sensor (note: the temperature will drop much slower than it increased).
 
 ### step8.go - Blue LED, Button, Green LED, Cylon.js API, Buzzer, Touch, Dial, Temperature, Red LED, Sound
 
