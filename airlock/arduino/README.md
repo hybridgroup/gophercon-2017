@@ -3,7 +3,7 @@
 ## Installation
 
 ```
-go get -d -u github.com/hybridgroup/gobot/... && && go install github.com/hybridgroup/gobot/platforms/firmata
+go get -d -u github.com/hybridgroup/gobot/... && go install github.com/hybridgroup/gobot/platforms/firmata
 ```
 
 ## Running the code
