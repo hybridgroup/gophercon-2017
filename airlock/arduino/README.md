@@ -39,6 +39,8 @@ First connect the power on the Arduino to the breadboard as follows:
 
 - Connect pin 4 on the breadboard to the breadboard's blue ground rail (-) using a black jumper cable.
 
+- Discover what tty is being used by your connection: `ls /dev/tty.*`
+
 Run the code.
 
 You should see the blue LED blink.
