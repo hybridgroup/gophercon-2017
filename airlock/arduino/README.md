@@ -101,7 +101,7 @@ You can now point your web browser to `http://localhost:3000` and try out the [R
 
 - Connect a 10K Ohm resistor from pin 21 on the breadboard to pin 23 on the breadboard.
 
-- Connect a black jumper cable from the ground rail (-) on the breadboard to pin 11 on the breadboard.
+- Connect a black jumper cable from the ground rail (-) on the breadboard to pin 23 on the breadboard.
 
 - Connect pin 8 on the Arduino to pin 21 on the breadboard on the opposite side. Choose any color of cable besides red or black.
 
