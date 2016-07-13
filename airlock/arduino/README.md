@@ -35,7 +35,7 @@ First connect the power on the Arduino to the breadboard as follows:
 
 ![Gobot](https://raw.githubusercontent.com/hybridgroup/gobot-workshop-2016/master/images/arduino/step1.jpg)
 
-- Plug a blue LED to pin 3 and pin 4 on the breadboard. Make sure the longer pin of the LED is plugged into pin 3.
+- Plug a blue LED to pin 3 and pin 4 on the breadboard. Make sure the longer pin of the LED is plugged into pin 3. Any column on the breadboard (a-e) will work.
 
 - Connect pin 3 on the Arduino to pin 3 on the breadboard. Choose any color of cable besides red or black.
 
