@@ -16,7 +16,7 @@ Not yet...
 ## Installation
 
 ```
-go get -d -u github.com/hybridgroup/gobot/... && && go install github.com/hybridgroup/gobot/platforms/ble
+go get -d -u github.com/hybridgroup/gobot/... && go install github.com/hybridgroup/gobot/platforms/ble
 ```
 
 ## Running the code
