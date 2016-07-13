@@ -27,7 +27,7 @@ func main() {
 		joystickConfig,
 	)
 
-	droneAdaptor := ble.NewBLEAdaptor("ble", os.Args[1])
+	droneAdaptor := ble.NewBLEClientAdaptor("ble", os.Args[1])
 	drone := ble.NewBLEMinidroneDriver(droneAdaptor, "drone")
 
 	work := func() {
