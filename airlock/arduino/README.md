@@ -15,6 +15,8 @@ To compile/run the code:
 $ go run step1.go /dev/ttyACM0
 ```
 
+If using Mac OS X then the Arduino will probably use a device name like `/dev/tty.usbmodem1421`. Perform a directory listing of `/dev/`; the Arduino is likely a device named using the pattern `/dev/tty.usbmodem`.
+
 Substitute the name of the program and the name of your serial port as needed.
 
 The Gobot program will use the serial interface to communicate with a connected Arduino that is running the Firmata sketch. Your Arduino already has Firmata installed for you. If you need to reload Firmata on your Arduino you can use Gort (http://gort.io)
