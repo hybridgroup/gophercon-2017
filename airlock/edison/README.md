@@ -3,7 +3,7 @@
 ## Installation
 
 ```
-go get -d -u github.com/hybridgroup/gobot/... && && go install github.com/hybridgroup/gobot/platforms/intel-iot/edison
+go get -d -u github.com/hybridgroup/gobot/... && go install github.com/hybridgroup/gobot/platforms/intel-iot/edison
 ```
 
 ## Running the code
