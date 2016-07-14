@@ -67,7 +67,7 @@ This step has us playing with the Cylon.js API. No additional hardware needs to 
 
 Run the code.
 
-You can now point your web browser to `http://localhost:3000` and try out the [Robeaux](https://github.com/hybridgroup/robeaux) web interface.
+You can now point your web browser to `http://<IP-of-your-device>:3000` and try out the [Robeaux](https://github.com/hybridgroup/robeaux) web interface.
 
 ### step5.go - Blue LED, Button, Green LED, Cylon.js API, Buzzer, Touch
 
