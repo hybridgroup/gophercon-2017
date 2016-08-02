@@ -7,10 +7,13 @@ go get -d -u github.com/hybridgroup/gobot/... && go install github.com/hybridgro
 go get -d -u github.com/hybridgroup/gobot-workshop-2016
 ```
 ## Setting up your board
-Follow the directions at the Edison site  
-`https://software.intel.com/en-us/node/628232`
+Follow the directions at the Edison site:
 
-or just download the setup from and follow the setup prompts `https://software.intel.com/iot/hardware/edison/downloads`
+https://software.intel.com/en-us/node/628232
+
+or just download the setup and follow the setup prompts:
+
+https://software.intel.com/iot/hardware/edison/downloads
 
 ## Finding and connecting to the Edison - OSX
 - Connect both USB cables to power and establish a serial connection
