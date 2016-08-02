@@ -45,7 +45,7 @@ func main() {
 	button = gpio.NewGroveButtonDriver(board, "button", "2")
 	blue = gpio.NewGroveLedDriver(board, "blue", "3")
 	green = gpio.NewGroveLedDriver(board, "green", "4")
-	buzzer = gpio.NewGroveBuzzerDriver(board, "buzzer", "7")
+	buzzer = gpio.NewGroveBuzzerDriver(board, "buzzer", "6")
 	touch = gpio.NewGroveTouchDriver(board, "touch", "8")
 
 	work := func() {

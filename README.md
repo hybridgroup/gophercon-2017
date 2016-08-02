@@ -6,9 +6,7 @@ These are the code examples for the Gobot workshop series for 2016.
 
 Uses the Intel Edison along with the Seeedstudio IoT Starter Kit parts.
 
-## Solar Sensor
-
-Uses the Arduino along with the some common electronic parts.
+There is also an abbreviated version that uses an Arduino along with the some common electronic parts.
 
 ## Drone
 

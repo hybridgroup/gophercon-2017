@@ -83,7 +83,7 @@ func main() {
 	blue = gpio.NewGroveLedDriver(board, "blue", "3")
 	green = gpio.NewGroveLedDriver(board, "green", "4")
 	red = gpio.NewGroveLedDriver(board, "red", "5")
-	buzzer = gpio.NewGroveBuzzerDriver(board, "buzzer", "7")
+	buzzer = gpio.NewGroveBuzzerDriver(board, "buzzer", "6")
 	touch = gpio.NewGroveTouchDriver(board, "touch", "8")
 
 	// analog
@@ -110,7 +110,10 @@ func main() {
 		})
 
 		gobot.On(rotary.Event("data"), func(data interface{}) {
-			fmt.Println("rotary", data)
+			b := uint8(
+				gobot.ToScale(gobot.FromScale(float64(data.(int)), 0, 4096), 0, 255),
+			)
+			blue.Brightness(b)
 		})
 
 		gobot.On(sound.Event("data"), func(data interface{}) {
