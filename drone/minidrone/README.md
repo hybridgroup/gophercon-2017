@@ -45,3 +45,7 @@ Coming soon...
 ### 4-flips.go
 
 ### 5-flightcontrol.go
+
+## License
+
+Copyright (c) 2015-2016 The Hybrid Group. Licensed under the MIT license.

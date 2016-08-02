@@ -22,3 +22,7 @@ Substitute the name of your Ollie or BB-8 as needed.
 ### 1-color.go
 
 ### 2-roll.go
+
+## License
+
+Copyright (c) 2015-2016 The Hybrid Group. Licensed under the MIT license.

@@ -124,3 +124,7 @@ When you press the second button, the buzzer should sound.
 Run the code.
 
 Changing the light level will display the current analog reading on your console.
+
+## License
+
+Copyright (c) 2015-2016 The Hybrid Group. Licensed under the MIT license.

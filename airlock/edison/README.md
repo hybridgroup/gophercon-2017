@@ -159,3 +159,7 @@ Connect the LCD to any of the I2C ports on the Grove shield.
 Run the code.
 
 The LCD display will show informative messages, and also change the backlight color to match the color of whichever of the 3 LEDs is lit.
+
+## License
+
+Copyright (c) 2015-2016 The Hybrid Group. Licensed under the MIT license.
