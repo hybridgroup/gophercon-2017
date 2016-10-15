@@ -20,7 +20,7 @@ go get -d -u github.com/hybridgroup/gobot/... && && go install github.com/hybrid
 ```
 
 ## Running the code
-When you run any of these examples, you will compile and execute the code on your computer. When you are running the program, you will be communicating with the drone  using the Bluetooth Low Energy (LE) interface.
+When you run any of these examples, you will compile and execute the code on your computer. When you are running the program, you will be communicating with the drone using the Bluetooth Low Energy (LE) interface.
 
 To compile/run the code, substitute the name of your drone as needed:
 
@@ -32,7 +32,9 @@ $ GODEBUG=cgocheck=0 go run 5-freeflight.go RS_1234
 
 ### Linux
 
-Coming soon...
+```
+go run 5-freeflight.go RS_1234
+```
 
 ## Code
 

@@ -19,50 +19,49 @@ func main() {
 	pwd, _ := os.Getwd()
 	joystickConfig := pwd + "/dualshock3.json"
 
-	gbot := gobot.NewGobot()
+	master := gobot.NewMaster()
 
-	joystickAdaptor := joystick.NewJoystickAdaptor("ps3")
-	joystick := joystick.NewJoystickDriver(joystickAdaptor,
-		"ps3",
+	joystickAdaptor := joystick.NewAdaptor()
+	joystick := joystick.NewDriver(joystickAdaptor,
 		joystickConfig,
 	)
 
-	droneAdaptor := ble.NewBLEClientAdaptor("ble", os.Args[1])
-	drone := ble.NewBLEMinidroneDriver(droneAdaptor, "drone")
+	droneAdaptor := ble.NewClientAdaptor(os.Args[1])
+	drone := ble.NewMinidroneDriver(droneAdaptor)
 
 	work := func() {
 		offset := 32767.0
 		rightStick := pair{x: 0, y: 0}
 		leftStick := pair{x: 0, y: 0}
 
-		gobot.On(joystick.Event("triangle_press"), func(data interface{}) {
+		joystick.On(joystick.Event("triangle_press"), func(data interface{}) {
 			drone.TakeOff()
 		})
-		gobot.On(joystick.Event("square_press"), func(data interface{}) {
+		joystick.On(joystick.Event("square_press"), func(data interface{}) {
 			drone.Stop()
 		})
-		gobot.On(joystick.Event("x_press"), func(data interface{}) {
+		joystick.On(joystick.Event("x_press"), func(data interface{}) {
 			drone.Land()
 		})
-		gobot.On(joystick.Event("left_x"), func(data interface{}) {
+		joystick.On(joystick.Event("left_x"), func(data interface{}) {
 			val := float64(data.(int16))
 			if leftStick.x != val {
 				leftStick.x = val
 			}
 		})
-		gobot.On(joystick.Event("left_y"), func(data interface{}) {
+		joystick.On(joystick.Event("left_y"), func(data interface{}) {
 			val := float64(data.(int16))
 			if leftStick.y != val {
 				leftStick.y = val
 			}
 		})
-		gobot.On(joystick.Event("right_x"), func(data interface{}) {
+		joystick.On(joystick.Event("right_x"), func(data interface{}) {
 			val := float64(data.(int16))
 			if rightStick.x != val {
 				rightStick.x = val
 			}
 		})
-		gobot.On(joystick.Event("right_y"), func(data interface{}) {
+		joystick.On(joystick.Event("right_y"), func(data interface{}) {
 			val := float64(data.(int16))
 			if rightStick.y != val {
 				rightStick.y = val
@@ -114,9 +113,9 @@ func main() {
 		work,
 	)
 
-	gbot.AddRobot(robot)
+	master.AddRobot(robot)
 
-	gbot.Start()
+	master.Start()
 }
 
 func validatePitch(data float64, offset float64) int {

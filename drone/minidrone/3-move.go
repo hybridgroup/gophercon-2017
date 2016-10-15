@@ -10,21 +10,21 @@ import (
 )
 
 func main() {
-	gbot := gobot.NewGobot()
+	master := gobot.NewMaster()
 
-	bleAdaptor := ble.NewBLEClientAdaptor("ble", os.Args[1])
-	drone := ble.NewBLEMinidroneDriver(bleAdaptor, "drone")
+	bleAdaptor := ble.NewClientAdaptor(os.Args[1])
+	drone := ble.NewMinidroneDriver(bleAdaptor)
 
 	work := func() {
-		gobot.On(drone.Event("battery"), func(data interface{}) {
+		drone.On(drone.Event("battery"), func(data interface{}) {
 			fmt.Printf("battery: %d\n", data)
 		})
 
-		gobot.On(drone.Event("status"), func(data interface{}) {
+		drone.On(drone.Event("status"), func(data interface{}) {
 			fmt.Printf("status: %d\n", data)
 		})
 
-		gobot.On(drone.Event("flying"), func(data interface{}) {
+		drone.On(drone.Event("flying"), func(data interface{}) {
 			fmt.Println("flying!")
 			gobot.After(5*time.Second, func() {
 				fmt.Println("forwards...")
@@ -48,7 +48,7 @@ func main() {
 			})
 		})
 
-		gobot.On(drone.Event("landed"), func(data interface{}) {
+		drone.On(drone.Event("landed"), func(data interface{}) {
 			fmt.Println("landed.")
 		})
 
@@ -61,7 +61,7 @@ func main() {
 		work,
 	)
 
-	gbot.AddRobot(robot)
+	master.AddRobot(robot)
 
-	gbot.Start()
+	master.Start()
 }
