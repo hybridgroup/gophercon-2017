@@ -5,8 +5,8 @@ import (
 	"os"
 
 	"github.com/hybridgroup/gobot"
+	"github.com/hybridgroup/gobot/drivers/gpio"
 	"github.com/hybridgroup/gobot/platforms/firmata"
-	"github.com/hybridgroup/gobot/platforms/gpio"
 )
 
 var button *gpio.ButtonDriver
@@ -25,25 +25,25 @@ func Reset() {
 }
 
 func main() {
-	gbot := gobot.NewGobot()
+	master := gobot.NewMaster()
 
-	board := firmata.NewFirmataAdaptor("arduino", os.Args[1])
+	board := firmata.NewAdaptor(os.Args[1])
 
 	// digital devices
-	button = gpio.NewButtonDriver(board, "button", "2")
-	blue = gpio.NewLedDriver(board, "blue", "3")
-	green = gpio.NewLedDriver(board, "green", "4")
+	button = gpio.NewButtonDriver(board, "2")
+	blue = gpio.NewLedDriver(board, "3")
+	green = gpio.NewLedDriver(board, "4")
 
 	work := func() {
 		Reset()
 
-		gobot.On(button.Event(gpio.Push), func(data interface{}) {
+		button.On(button.Event(gpio.ButtonPush), func(data interface{}) {
 			TurnOff()
 			fmt.Println("On!")
 			blue.On()
 		})
 
-		gobot.On(button.Event(gpio.Release), func(data interface{}) {
+		button.On(button.Event(gpio.ButtonRelease), func(data interface{}) {
 			Reset()
 		})
 	}
@@ -54,7 +54,7 @@ func main() {
 		work,
 	)
 
-	gbot.AddRobot(robot)
+	master.AddRobot(robot)
 
-	gbot.Start()
+	master.Start()
 }

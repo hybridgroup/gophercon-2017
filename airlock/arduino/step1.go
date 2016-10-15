@@ -5,15 +5,15 @@ import (
 	"time"
 
 	"github.com/hybridgroup/gobot"
+	"github.com/hybridgroup/gobot/drivers/gpio"
 	"github.com/hybridgroup/gobot/platforms/firmata"
-	"github.com/hybridgroup/gobot/platforms/gpio"
 )
 
 func main() {
-	gbot := gobot.NewGobot()
+	gbot := gobot.NewMaster()
 
-	board := firmata.NewFirmataAdaptor("arduino", os.Args[1])
-	blue := gpio.NewLedDriver(board, "blue", "3")
+	board := firmata.NewAdaptor(os.Args[1])
+	blue := gpio.NewLedDriver(board, "3")
 
 	work := func() {
 		gobot.Every(1*time.Second, func() {

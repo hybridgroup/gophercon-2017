@@ -6,8 +6,8 @@ import (
 
 	"github.com/hybridgroup/gobot"
 	"github.com/hybridgroup/gobot/api"
-	"github.com/hybridgroup/gobot/platforms/gpio"
-	"github.com/hybridgroup/gobot/platforms/i2c"
+	"github.com/hybridgroup/gobot/drivers/gpio"
+	"github.com/hybridgroup/gobot/drivers/i2c"
 	"github.com/hybridgroup/gobot/platforms/intel-iot/edison"
 )
 
@@ -45,7 +45,7 @@ func DetectLight(level int) {
 
 func CheckFireAlarm() {
 	temp := sensor.Temperature()
-	msg:= fmt.Sprintf("Temp: %v", temp)
+	msg := fmt.Sprintf("Temp: %v", temp)
 	Message(msg)
 	if temp >= 40 {
 		TurnOff()
@@ -75,10 +75,10 @@ func Reset() {
 }
 
 func Message(text string) {
-		fmt.Println(text)
-		screen.Clear()
-		screen.Home()
-		screen.Write(text)
+	fmt.Println(text)
+	screen.Clear()
+	screen.Home()
+	screen.Write(text)
 }
 
 func Blue() {
@@ -97,59 +97,59 @@ func Green() {
 }
 
 func main() {
-	gbot := gobot.NewGobot()
+	master := gobot.NewMaster()
 
-	a := api.NewAPI(gbot)
+	a := api.NewAPI(master)
 	a.Start()
 
-	// digital
-	board := edison.NewEdisonAdaptor("edison")
+	board := edison.NewAdaptor()
 
-	button = gpio.NewGroveButtonDriver(board, "button", "2")
-	blue = gpio.NewGroveLedDriver(board, "blue", "3")
-	green = gpio.NewGroveLedDriver(board, "green", "4")
-	red = gpio.NewGroveLedDriver(board, "red", "5")
-	buzzer = gpio.NewGroveBuzzerDriver(board, "buzzer", "6")
-	touch = gpio.NewGroveTouchDriver(board, "touch", "8")
+	// digital
+	button = gpio.NewGroveButtonDriver(board, "2")
+	blue = gpio.NewGroveLedDriver(board, "3")
+	green = gpio.NewGroveLedDriver(board, "4")
+	red = gpio.NewGroveLedDriver(board, "5")
+	buzzer = gpio.NewGroveBuzzerDriver(board, "6")
+	touch = gpio.NewGroveTouchDriver(board, "8")
 
 	// analog
-	rotary = gpio.NewGroveRotaryDriver(board, "rotary", "0")
-	sensor = gpio.NewGroveTemperatureSensorDriver(board, "sensor", "1")
-	sound = gpio.NewGroveSoundSensorDriver(board, "sound", "2")
-	light = gpio.NewGroveLightSensorDriver(board, "light", "3")
+	rotary = gpio.NewGroveRotaryDriver(board, "0")
+	sensor = gpio.NewGroveTemperatureSensorDriver(board, "1")
+	sound = gpio.NewGroveSoundSensorDriver(board, "2")
+	light = gpio.NewGroveLightSensorDriver(board, "3")
 
 	// i2c
-	screen = i2c.NewGroveLcdDriver(board, "screen")
+	screen = i2c.NewGroveLcdDriver(board)
 
 	work := func() {
 		Reset()
 
-		gobot.On(button.Event(gpio.Push), func(data interface{}) {
+		button.On(button.Event(gpio.ButtonPush), func(data interface{}) {
 			TurnOff()
 			Message("On!")
 			Blue()
 		})
 
-		gobot.On(button.Event(gpio.Release), func(data interface{}) {
+		button.On(button.Event(gpio.ButtonRelease), func(data interface{}) {
 			Reset()
 		})
 
-		gobot.On(touch.Event(gpio.Push), func(data interface{}) {
+		touch.On(touch.Event(gpio.ButtonPush), func(data interface{}) {
 			Doorbell()
 		})
 
-		gobot.On(rotary.Event("data"), func(data interface{}) {
+		rotary.On(rotary.Event("data"), func(data interface{}) {
 			b := uint8(
 				gobot.ToScale(gobot.FromScale(float64(data.(int)), 0, 4096), 0, 255),
 			)
 			blue.Brightness(b)
 		})
 
-		gobot.On(sound.Event("data"), func(data interface{}) {
+		sound.On(sound.Event("data"), func(data interface{}) {
 			DetectSound(data.(int))
 		})
 
-		gobot.On(light.Event("data"), func(data interface{}) {
+		light.On(light.Event("data"), func(data interface{}) {
 			DetectLight(data.(int))
 		})
 
@@ -164,7 +164,7 @@ func main() {
 		work,
 	)
 
-	gbot.AddRobot(robot)
+	master.AddRobot(robot)
 
-	gbot.Start()
+	master.Start()
 }

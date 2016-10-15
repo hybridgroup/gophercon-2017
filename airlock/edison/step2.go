@@ -4,24 +4,24 @@ import (
 	"fmt"
 
 	"github.com/hybridgroup/gobot"
-	"github.com/hybridgroup/gobot/platforms/gpio"
+	"github.com/hybridgroup/gobot/drivers/gpio"
 	"github.com/hybridgroup/gobot/platforms/intel-iot/edison"
 )
 
 func main() {
-	gbot := gobot.NewGobot()
+	master := gobot.NewMaster()
 
-	board := edison.NewEdisonAdaptor("edison")
-	button := gpio.NewGroveButtonDriver(board, "button", "2")
-	blue := gpio.NewGroveLedDriver(board, "blue", "3")
+	board := edison.NewAdaptor()
+	button := gpio.NewGroveButtonDriver(board, "2")
+	blue := gpio.NewGroveLedDriver(board, "3")
 
 	work := func() {
-		gobot.On(button.Event(gpio.Push), func(data interface{}) {
+		button.On(button.Event(gpio.ButtonPush), func(data interface{}) {
 			fmt.Println("On!")
 			blue.On()
 		})
 
-		gobot.On(button.Event(gpio.Release), func(data interface{}) {
+		button.On(button.Event(gpio.ButtonRelease), func(data interface{}) {
 			fmt.Println("Off!")
 			blue.Off()
 		})
@@ -33,7 +33,7 @@ func main() {
 		work,
 	)
 
-	gbot.AddRobot(robot)
+	master.AddRobot(robot)
 
-	gbot.Start()
+	master.Start()
 }

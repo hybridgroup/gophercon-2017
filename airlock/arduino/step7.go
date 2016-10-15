@@ -7,8 +7,8 @@ import (
 
 	"github.com/hybridgroup/gobot"
 	"github.com/hybridgroup/gobot/api"
+	"github.com/hybridgroup/gobot/drivers/gpio"
 	"github.com/hybridgroup/gobot/platforms/firmata"
-	"github.com/hybridgroup/gobot/platforms/gpio"
 )
 
 var button *gpio.GroveButtonDriver
@@ -50,20 +50,20 @@ func Reset() {
 }
 
 func main() {
-	gbot := gobot.NewGobot()
+	master := gobot.NewMaster()
 
-	a := api.NewAPI(gbot)
+	a := api.NewAPI(master)
 	a.Start()
 
-	board := firmata.NewFirmataAdaptor("arduino", os.Args[1])
+	board := firmata.NewAdaptor(os.Args[1])
 
 	// digital devices
-	button = gpio.NewGroveButtonDriver(board, "button", "2")
-	blue = gpio.NewGroveLedDriver(board, "blue", "3")
-	green = gpio.NewGroveLedDriver(board, "green", "4")
-	red = gpio.NewGroveLedDriver(board, "red", "5")
-	buzzer = gpio.NewGroveBuzzerDriver(board, "buzzer", "7")
-	touch = gpio.NewGroveTouchDriver(board, "touch", "8")
+	button = gpio.NewGroveButtonDriver(board, "2")
+	blue = gpio.NewGroveLedDriver(board, "3")
+	green = gpio.NewGroveLedDriver(board, "4")
+	red = gpio.NewGroveLedDriver(board, "5")
+	buzzer = gpio.NewGroveBuzzerDriver(board, "7")
+	touch = gpio.NewGroveTouchDriver(board, "8")
 
 	// analog devices
 	rotary = gpio.NewGroveRotaryDriver(board, "rotary", "0")
@@ -72,21 +72,21 @@ func main() {
 	work := func() {
 		Reset()
 
-		gobot.On(button.Event(gpio.Push), func(data interface{}) {
+		button.On(button.Event(gpio.ButtonPush), func(data interface{}) {
 			TurnOff()
 			fmt.Println("On!")
 			blue.On()
 		})
 
-		gobot.On(button.Event(gpio.Release), func(data interface{}) {
+		button.On(button.Event(gpio.ButtonRelease), func(data interface{}) {
 			Reset()
 		})
 
-		gobot.On(touch.Event(gpio.Push), func(data interface{}) {
+		button.On(touch.Event(gpio.ButtonPush), func(data interface{}) {
 			Doorbell()
 		})
 
-		gobot.On(rotary.Event("data"), func(data interface{}) {
+		rotary.On(rotary.Event("data"), func(data interface{}) {
 			fmt.Println("rotary", data)
 		})
 
@@ -101,7 +101,7 @@ func main() {
 		work,
 	)
 
-	gbot.AddRobot(robot)
+	master.AddRobot(robot)
 
-	gbot.Start()
+	master.Start()
 }
