@@ -9,13 +9,13 @@ import (
 )
 
 func main() {
-	gbot := gobot.NewGobot()
+	master := gobot.NewMaster()
 
-	bleAdaptor := ble.NewBLEClientAdaptor("ble", os.Args[1])
-	ollie := ble.NewSpheroOllieDriver(bleAdaptor, "ollie")
+	bleAdaptor := ble.NewClientAdaptor(os.Args[1])
+	ollie := ble.NewSpheroOllieDriver(bleAdaptor)
 
 	work := func() {
-    gobot.Every(1*time.Second, func() {
+		gobot.Every(1*time.Second, func() {
 			r := uint8(gobot.Rand(255))
 			g := uint8(gobot.Rand(255))
 			b := uint8(gobot.Rand(255))
@@ -33,7 +33,7 @@ func main() {
 		work,
 	)
 
-	gbot.AddRobot(robot)
+	master.AddRobot(robot)
 
-	gbot.Start()
+	master.Start()
 }
