@@ -19,8 +19,6 @@ func main() {
 	pwd, _ := os.Getwd()
 	joystickConfig := pwd + "/dualshock3.json"
 
-	master := gobot.NewMaster()
-
 	joystickAdaptor := joystick.NewAdaptor()
 	joystick := joystick.NewDriver(joystickAdaptor,
 		joystickConfig,
@@ -113,9 +111,7 @@ func main() {
 		work,
 	)
 
-	master.AddRobot(robot)
-
-	master.Start()
+	robot.Start()
 }
 
 func validatePitch(data float64, offset float64) int {

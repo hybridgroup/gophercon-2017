@@ -9,8 +9,6 @@ import (
 )
 
 func main() {
-	master := gobot.NewMaster()
-
 	board := edison.NewAdaptor()
 	blue := gpio.NewGroveLedDriver(board, "3")
 
@@ -26,7 +24,5 @@ func main() {
 		work,
 	)
 
-	master.AddRobot(robot)
-
-	master.Start()
+	robot.Start()
 }

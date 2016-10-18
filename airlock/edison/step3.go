@@ -24,8 +24,6 @@ func Reset() {
 }
 
 func main() {
-	master := gobot.NewMaster()
-
 	board := edison.NewAdaptor()
 	button = gpio.NewGroveButtonDriver(board, "2")
 	blue = gpio.NewGroveLedDriver(board, "3")
@@ -51,7 +49,5 @@ func main() {
 		work,
 	)
 
-	master.AddRobot(robot)
-
-	master.Start()
+	robot.Start()
 }

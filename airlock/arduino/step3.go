@@ -25,8 +25,6 @@ func Reset() {
 }
 
 func main() {
-	master := gobot.NewMaster()
-
 	board := firmata.NewAdaptor(os.Args[1])
 
 	// digital devices
@@ -54,7 +52,5 @@ func main() {
 		work,
 	)
 
-	master.AddRobot(robot)
-
-	master.Start()
+	robot.Start()
 }

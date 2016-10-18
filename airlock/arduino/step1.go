@@ -10,8 +10,6 @@ import (
 )
 
 func main() {
-	gbot := gobot.NewMaster()
-
 	board := firmata.NewAdaptor(os.Args[1])
 	blue := gpio.NewLedDriver(board, "3")
 
@@ -27,7 +25,5 @@ func main() {
 		work,
 	)
 
-	gbot.AddRobot(robot)
-
-	gbot.Start()
+	robot.Start()
 }

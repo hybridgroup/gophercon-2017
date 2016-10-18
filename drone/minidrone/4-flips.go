@@ -10,8 +10,6 @@ import (
 )
 
 func main() {
-	master := gobot.NewMaster()
-
 	bleAdaptor := ble.NewClientAdaptor(os.Args[1])
 	drone := ble.NewMinidroneDriver(bleAdaptor)
 
@@ -53,7 +51,5 @@ func main() {
 		work,
 	)
 
-	master.AddRobot(robot)
-
-	master.Start()
+	robot.Start()
 }
