@@ -5,10 +5,11 @@ import (
 	"os"
 	"time"
 
-	"github.com/hybridgroup/gobot"
-	"github.com/hybridgroup/gobot/api"
-	"github.com/hybridgroup/gobot/drivers/gpio"
-	"github.com/hybridgroup/gobot/platforms/firmata"
+	"gobot.io/x/gobot"
+	"gobot.io/x/gobot/api"
+	"gobot.io/x/gobot/drivers/aio"
+	"gobot.io/x/gobot/drivers/gpio"
+	"gobot.io/x/gobot/platforms/firmata"
 )
 
 var button *gpio.ButtonDriver
@@ -16,7 +17,7 @@ var blue *gpio.LedDriver
 var green *gpio.LedDriver
 var buzzer *gpio.GroveBuzzerDriver
 var touch *gpio.ButtonDriver
-var light *gpio.AnalogSensorDriver
+var light *aio.AnalogSensorDriver
 
 func Doorbell() {
 	TurnOff()
@@ -53,26 +54,26 @@ func main() {
 	touch = gpio.NewButtonDriver(board, "8")
 
 	// analog devices
-	light = gpio.NewAnalogSensorDriver(board, "0")
+	light = aio.NewAnalogSensorDriver(board, "0")
 
 	work := func() {
 		Reset()
 
-		button.On(button.Event(gpio.ButtonPush), func(data interface{}) {
+		button.On(gpio.ButtonPush, func(data interface{}) {
 			TurnOff()
 			fmt.Println("On!")
 			blue.On()
 		})
 
-		button.On(button.Event(gpio.ButtonRelease), func(data interface{}) {
+		button.On(gpio.ButtonRelease, func(data interface{}) {
 			Reset()
 		})
 
-		touch.On(touch.Event(gpio.ButtonPush), func(data interface{}) {
+		touch.On(gpio.ButtonPush, func(data interface{}) {
 			Doorbell()
 		})
 
-		light.On(light.Event("data"), func(data interface{}) {
+		light.On(aio.Data, func(data interface{}) {
 			fmt.Println("light", data)
 		})
 	}

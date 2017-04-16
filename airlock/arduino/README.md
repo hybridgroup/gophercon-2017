@@ -3,7 +3,7 @@
 ## Installation
 
 ```
-go get -d -u github.com/hybridgroup/gobot/... && go install github.com/hybridgroup/gobot/platforms/firmata
+go get -d -u gobot.io/x/gobot/...
 ```
 
 ## Running the code
@@ -23,7 +23,7 @@ The Gobot program will use the serial interface to communicate with a connected 
 
 ## Code
 
-![Gobot](https://raw.githubusercontent.com/hybridgroup/gobot-workshop-2016/master/images/arduino/step0.jpg)
+![Gobot](../../images/arduino/step0.jpg)
 
 First connect the power on the Arduino to the breadboard as follows:
 
@@ -33,7 +33,7 @@ First connect the power on the Arduino to the breadboard as follows:
 
 ### step1.go - Blue LED
 
-![Gobot](https://raw.githubusercontent.com/hybridgroup/gobot-workshop-2016/master/images/arduino/step1.jpg)
+![Gobot](../../images/arduino/step1.jpg)
 
 - Plug a blue LED to pin 3 and pin 4 on the breadboard. Make sure the longer pin of the LED is plugged into pin 3. Any column on the breadboard (a-e) will work.
 
@@ -49,7 +49,7 @@ You should see the blue LED blink.
 
 ### step2.go - Blue LED, Button
 
-![Gobot](https://raw.githubusercontent.com/hybridgroup/gobot-workshop-2016/master/images/arduino/step2.jpg)
+![Gobot](../../images/arduino/step2.jpg)
 
 - Connect the button to the breadboard so one side connects to pins 7 and 9 on one side of the gap, and connects to pins 7 and 9 on the other side of the gap.
 
@@ -67,7 +67,7 @@ When you press the button, the blue LED should turn on.
 
 ### step3.go - Blue LED, Button, Green LED
 
-![Gobot](https://raw.githubusercontent.com/hybridgroup/gobot-workshop-2016/master/images/arduino/step3.jpg)
+![Gobot](../../images/arduino/step3.jpg)
 
 - Plug a green LED to pin 13 and pin 14 on the breadboard. Make sure the longer pin of the LED is plugged into pin 13.
 
@@ -79,9 +79,9 @@ Run the code.
 
 The green LED should light up. When you press the button, the blue LED should turn on, and the green LED should turn off.
 
-### step4.go - Blue LED, Button, Green LED, Cylon.js API
+### step4.go - Blue LED, Button, Green LED, Gobot API
 
-This step has us playing with the Cylon.js API. No additional hardware needs to be connected.
+This step has us playing with the Gobot API. No additional hardware needs to be connected.
 
 Run the code.
 
@@ -89,7 +89,7 @@ You can now point your web browser to `http://localhost:3000` and try out the [R
 
 ### step5.go - Blue LED, Button, Green LED, Cylon.js API, Buzzer, Additional Button
 
-![Gobot](https://raw.githubusercontent.com/hybridgroup/gobot-workshop-2016/master/images/arduino/step5.jpg)
+![Gobot](../../images/arduino/step5.jpg)
 
 - Connect the buzzer to pin 16 on both sides of the breadboard. Make sure the plus (+) is on the left side.
 
@@ -113,7 +113,7 @@ When you press the second button, the buzzer should sound.
 
 ### step6.go - Blue LED, Button, Green LED, Cylon.js API, Buzzer, Additional Button, Photoresistor
 
-![Gobot](https://raw.githubusercontent.com/hybridgroup/gobot-workshop-2016/master/images/arduino/step6.jpg)
+![Gobot](../../images/arduino/step6.jpg)
 
 - Connect the Photoresistor to pin 26 on the breadboard and the power rail (+) on the breadboard.
 
@@ -127,4 +127,4 @@ Changing the light level will display the current analog reading on your console
 
 ## License
 
-Copyright (c) 2015-2016 The Hybrid Group. Licensed under the MIT license.
+Copyright (c) 2015-2017 The Hybrid Group. Licensed under the MIT license.

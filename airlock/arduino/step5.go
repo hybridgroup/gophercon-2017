@@ -5,10 +5,10 @@ import (
 	"os"
 	"time"
 
-	"github.com/hybridgroup/gobot"
-	"github.com/hybridgroup/gobot/api"
-	"github.com/hybridgroup/gobot/drivers/gpio"
-	"github.com/hybridgroup/gobot/platforms/firmata"
+	"gobot.io/x/gobot"
+	"gobot.io/x/gobot/api"
+	"gobot.io/x/gobot/drivers/gpio"
+	"gobot.io/x/gobot/platforms/firmata"
 )
 
 var button *gpio.ButtonDriver
@@ -54,17 +54,17 @@ func main() {
 	work := func() {
 		Reset()
 
-		button.On(button.Event(gpio.ButtonPush), func(data interface{}) {
+		button.On(gpio.ButtonPush, func(data interface{}) {
 			TurnOff()
 			fmt.Println("On!")
 			blue.On()
 		})
 
-		button.On(button.Event(gpio.ButtonRelease), func(data interface{}) {
+		button.On(gpio.ButtonRelease, func(data interface{}) {
 			Reset()
 		})
 
-		touch.On(touch.Event(gpio.ButtonPush), func(data interface{}) {
+		touch.On(gpio.ButtonPush, func(data interface{}) {
 			Doorbell()
 		})
 	}
