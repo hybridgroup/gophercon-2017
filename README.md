@@ -1,6 +1,6 @@
-# Gobot Workshop 2016
+# Gobot Workshop 2017
 
-These are the code examples for the Gobot (https://gobot.io) workshop series for 2016.
+These are the code examples for the Gobot (https://gobot.io) workshop series for 2017 and beyond.
 
 ## Airlock
 
@@ -18,4 +18,4 @@ Uses the Sphero Ollie
 
 ## License
 
-Copyright (c) 2015-2016 The Hybrid Group. Licensed under the MIT license.
+Copyright (c) 2015-2017 The Hybrid Group. Licensed under the MIT license.
