@@ -5,13 +5,14 @@ import (
 	"os"
 	"time"
 
-	"github.com/hybridgroup/gobot"
-	"github.com/hybridgroup/gobot/platforms/ble"
+	"gobot.io/x/gobot"
+	"gobot.io/x/gobot/platforms/ble"
+	"gobot.io/x/gobot/platforms/parrot/minidrone"
 )
 
 func main() {
 	bleAdaptor := ble.NewClientAdaptor(os.Args[1])
-	drone := ble.NewMinidroneDriver(bleAdaptor)
+	drone := minidrone.NewDriver(bleAdaptor)
 
 	work := func() {
 		drone.On(drone.Event("battery"), func(data interface{}) {

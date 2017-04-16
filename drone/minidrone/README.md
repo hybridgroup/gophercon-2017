@@ -16,7 +16,7 @@ Not yet...
 ## Installation
 
 ```
-go get -d -u github.com/hybridgroup/gobot/... && && go install github.com/hybridgroup/gobot/platforms/ble
+go get -d -u gobot.io/x/gobot/...
 ```
 
 ## Running the code
@@ -50,4 +50,4 @@ go run 5-freeflight.go RS_1234
 
 ## License
 
-Copyright (c) 2015-2016 The Hybrid Group. Licensed under the MIT license.
+Copyright (c) 2015-2017 The Hybrid Group. Licensed under the MIT license.
