@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 
-	"github.com/hybridgroup/gobot"
-	"github.com/hybridgroup/gobot/drivers/gpio"
-	"github.com/hybridgroup/gobot/platforms/intel-iot/edison"
+	"gobot.io/x/gobot"
+	"gobot.io/x/gobot/drivers/gpio"
+	"gobot.io/x/gobot/platforms/intel-iot/edison"
 )
 
 func main() {
@@ -14,12 +14,12 @@ func main() {
 	blue := gpio.NewGroveLedDriver(board, "3")
 
 	work := func() {
-		button.On(button.Event(gpio.ButtonPush), func(data interface{}) {
+		button.On(gpio.ButtonPush, func(data interface{}) {
 			fmt.Println("On!")
 			blue.On()
 		})
 
-		button.On(button.Event(gpio.ButtonRelease), func(data interface{}) {
+		button.On(gpio.ButtonRelease, func(data interface{}) {
 			fmt.Println("Off!")
 			blue.Off()
 		})

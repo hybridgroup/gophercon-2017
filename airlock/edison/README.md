@@ -3,9 +3,9 @@
 ## Installation
 
 ```
-go get -d -u github.com/hybridgroup/gobot/... && go install github.com/hybridgroup/gobot/platforms/intel-iot/edison
-go get -d -u github.com/hybridgroup/gobot-workshop-2016
+go get -d -u gobot.io/x/gobot/...
 ```
+
 ## Setting up your board
 Follow the directions at the Edison site:
 
@@ -63,7 +63,7 @@ $ ssh -t root@<IP of your device> ./step1
 
 ### step1.go - Blue LED
 
-![Gobot](https://raw.githubusercontent.com/hybridgroup/gobot-workshop-2016/master/images/edison/step1.jpg)
+![Gobot](../../images/edison/step1.jpg)
 
 Connect the blue LED to D3.
 
@@ -73,7 +73,7 @@ You should see the blue LED blink.
 
 ### step2.go - Blue LED, Button
 
-![Gobot](https://raw.githubusercontent.com/hybridgroup/gobot-workshop-2016/master/images/edison/step2.jpg)
+![Gobot](../../images/edison/step2.jpg)
 
 Connect the button to D2.
 
@@ -83,7 +83,7 @@ When you press the button, the blue LED should turn on.
 
 ### step3.go - Blue LED, Button, Green LED
 
-![Gobot](https://raw.githubusercontent.com/hybridgroup/gobot-workshop-2016/master/images/edison/step3.jpg)
+![Gobot](../../images/edison/step3.jpg)
 
 Connect the Green LED to D4.
 
@@ -101,7 +101,7 @@ You can now point your web browser to `http://<IP of your device>:3000` and try 
 
 ### step5.go - Blue LED, Button, Green LED, Gobot API, Buzzer, Touch
 
-![Gobot](https://raw.githubusercontent.com/hybridgroup/gobot-workshop-2016/master/images/edison/step5.jpg)
+![Gobot](../../images/edison/step5.jpg)
 
 Connect the buzzer to D6, and connect the touch sensor to D8.
 
@@ -111,7 +111,7 @@ When your finger touches the capacitive touch sensor, the buzzer should sound.
 
 ### step6.go - Blue LED, Button, Green LED, Gobot API, Buzzer, Touch, Dial
 
-![Gobot](https://raw.githubusercontent.com/hybridgroup/gobot-workshop-2016/master/images/edison/step6.jpg)
+![Gobot](../../images/edison/step6.jpg)
 
 Connect the rotary dial to A0.
 
@@ -121,7 +121,7 @@ Turning the dial will display the current analog reading on your console.
 
 ### step7.go - Blue LED, Button, Green LED, Gobot API, Buzzer, Touch, Dial, Temperature, Red LED
 
-![Gobot](https://raw.githubusercontent.com/hybridgroup/gobot-workshop-2016/master/images/edison/step7.jpg)
+![Gobot](../../images/edison/step7.jpg)
 
 Connect the temperature sensor to A1, and the red LED to D5
 
@@ -135,7 +135,7 @@ To turn the LED off, let go of the temperature sensor (note: the temperature wil
 
 ### step8.go - Blue LED, Button, Green LED, Gobot API, Buzzer, Touch, Dial, Temperature, Red LED, Sound
 
-![Gobot](https://raw.githubusercontent.com/hybridgroup/gobot-workshop-2016/master/images/edison/step8.jpg)
+![Gobot](../../images/edison/step8.jpg)
 
 Connect the sound sensor to A2.
 
@@ -145,7 +145,7 @@ When a sound is detected, the blue LED will light up, the sound sensor reading w
 
 ### step9.go - Blue LED, Button, Green LED, Gobot API, Buzzer, Touch, Dial, Temperature, Red LED, Sound, Light
 
-![Gobot](https://raw.githubusercontent.com/hybridgroup/gobot-workshop-2016/master/images/edison/step9.jpg)
+![Gobot](../../images/edison/step9.jpg)
 
 Connect the light sensor to A3.
 
@@ -155,7 +155,7 @@ When a light is detected, the blue LED will light up, and the light sensor readi
 
 ### step10.go - Blue LED, Button, Green LED, Gobot API, Buzzer, Touch, Dial, Temperature, Red LED, Sound, Light, LCD
 
-![Gobot](https://raw.githubusercontent.com/hybridgroup/gobot-workshop-2016/master/images/edison/step10.jpg)
+![Gobot](../../images/edison/step10.jpg)
 
 Connect the LCD to any of the I2C ports on the Grove shield.
 
@@ -165,4 +165,4 @@ The LCD display will show informative messages, and also change the backlight co
 
 ## License
 
-Copyright (c) 2015-2016 The Hybrid Group. Licensed under the MIT license.
+Copyright (c) 2015-2017 The Hybrid Group. Licensed under the MIT license.

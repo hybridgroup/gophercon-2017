@@ -4,10 +4,11 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/hybridgroup/gobot"
-	"github.com/hybridgroup/gobot/api"
-	"github.com/hybridgroup/gobot/drivers/gpio"
-	"github.com/hybridgroup/gobot/platforms/intel-iot/edison"
+	"gobot.io/x/gobot"
+	"gobot.io/x/gobot/api"
+	"gobot.io/x/gobot/drivers/aio"
+	"gobot.io/x/gobot/drivers/gpio"
+	"gobot.io/x/gobot/platforms/intel-iot/edison"
 )
 
 var button *gpio.GroveButtonDriver
@@ -16,8 +17,8 @@ var green *gpio.GroveLedDriver
 var red *gpio.GroveLedDriver
 var buzzer *gpio.GroveBuzzerDriver
 var touch *gpio.GroveTouchDriver
-var rotary *gpio.GroveRotaryDriver
-var sensor *gpio.GroveTemperatureSensorDriver
+var rotary *aio.GroveRotaryDriver
+var sensor *aio.GroveTemperatureSensorDriver
 
 func CheckFireAlarm() {
 	temp := sensor.Temperature()
@@ -33,7 +34,7 @@ func Doorbell() {
 	TurnOff()
 	blue.On()
 	buzzer.Tone(gpio.C4, gpio.Quarter)
-	<-time.After(1 * time.Second)
+	time.Sleep(1 * time.Second)
 	Reset()
 }
 
@@ -65,23 +66,23 @@ func main() {
 	touch = gpio.NewGroveTouchDriver(board, "8")
 
 	// analog
-	rotary = gpio.NewGroveRotaryDriver(board, "0")
-	sensor = gpio.NewGroveTemperatureSensorDriver(board, "1")
+	rotary = aio.NewGroveRotaryDriver(board, "0")
+	sensor = aio.NewGroveTemperatureSensorDriver(board, "1")
 
 	work := func() {
 		Reset()
 
-		button.On(button.Event(gpio.ButtonPush), func(data interface{}) {
+		button.On(gpio.ButtonPush, func(data interface{}) {
 			TurnOff()
 			fmt.Println("On!")
 			blue.On()
 		})
 
-		button.On(button.Event(gpio.ButtonRelease), func(data interface{}) {
+		button.On(gpio.ButtonRelease, func(data interface{}) {
 			Reset()
 		})
 
-		touch.On(touch.Event(gpio.ButtonPush), func(data interface{}) {
+		touch.On(gpio.ButtonPush, func(data interface{}) {
 			Doorbell()
 		})
 
