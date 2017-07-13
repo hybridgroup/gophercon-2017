@@ -56,47 +56,47 @@ analog/digital magnetic reed sensor that open or close when exposed to a magneti
 
 ### Light Cup
 
-didgital gravity powered mercury switch, LED on switch does not appear to work tried 4 different sensors to test "G" is ground ", "+" is 5v posative S is digital signal(works), " L" is 5v led which appears to not work
+digital gravity powered mercury switch, LED on switch does not appear to work tried 4 different sensors to test "G" is ground ", "+" is 5v posative S is digital signal(works), " L" is 5v led which appears to not work
 
 ### Infrared Emission Sensor
 
-Info here...
+analog/digital infrared sensor 5v red signal led included. A0 is anlog pin, "G" is ground ", "+" is 5v posative, D0 pin is the digital pin for this module 
 
 ### RGB LED
 
-Info here...
+this one has the correct labeling yay! "-" symbol is ground, "G" symbol is green posative, "R" symbol is red posative, and "B" symbol is blue posative
 
 ### IR Sensor
 
-Info here...
+digital infrared sensor "-" is negative, "s" pin is the digital signal pin and the middle pin is 5v positive
 
 ### Magnetic Reed Switch
 
-Info here...
+digital magnetic reed switch "-" is negative, "s" pin is the digital signal pin and the middle pin is 5v positive
 
 ### Mercury Switch
 
-Info here...
+digital murcury switch with red LED, "-" is negative, "s" pin is the digital signal pin and the middle pin is 5v positive, tilt the switch to trigger the signal and the LED also turns on
 
 ### Hit Sensor - Module
 
-Info here...
+digital knock/hit sensor "-" is negative, "s" pin is the digital signal pin and the middle pin is 5v positive, the sensor is not sensitive must hit kinda hard to trigger
 
 ### Vibration Sensor
 
-Info here...
+Digital Vibration sensor "-" is negative, "s" pin is the digital signal pin and the middle pin is 5v positive
 
 ### Tilt Sensor
 
-Info here...
+digital tilt sensor "-" is negative, "s" pin is the digital signal pin and the middle pin is 5v positive
 
 ### Relay
 
 Info here...
 
-### Active Buzzer
+### Active Buzzer X2
 
-Info here...
+digital buzzer... one buzzer works correctly and the other buzzer "-" symbol == positive
 
 ### Push Button
 
