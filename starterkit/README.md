@@ -8,63 +8,55 @@ The starter kit for the Gophercon 2017 Community Day!
 
 ### Sound Sensor
 
-Info here...
+module that can be used with analog signal to measure sound threshold and/or with digital to detect if sound was made
 
 ### Light Sensor
 
-Info here...
+analog luminescence detection module
 
 ### Magnetic Sensor - Digital
 
-Info here...
+digital module with an led to detect the presence of a magnetic field
 
 ### Magnetic Sensor - Analog
 
-Info here...
+analog module that is sensative to how near or far a magnet is detected 
 
 ### Red/Green LED - Small
 
-Info here...
+"-" symbol is the ground, middle pin is the posative for green and the end labeled "s" is the posative for the green
 
 ### Red/Green LED - Large
 
-Info here...
+"-" symbol is the ground, middle pin is the posative for green and the end labeled "s" is the posative for the green
 
 ### Temperature Sensor
 
-Info here...
-
-### Red/Green LED
-
-Info here...
+5v module ground is on the "-" symbol 5v is the center pin,and signal is analog on the "s" labeled pin... Need to do proper math to get correct temperature
 
 ### Magnetic Sensor - Module
 
-Info here...
+analog/digital magnetic feild module 5v red signal led included. A0 is anlog pin, "G" is ground ", "+" is 5v posative, D0 pin is the digital pin for this module
 
 ### Temperature Sensor - Module
 
-Info here...
+analog/digital temperature sensor A0 is anlog pin, "G" is ground ", "+" is 5v posative, D0 pin is the digital pin for this module math needs work to get correct temp
 
 ### Touch Sensor - Module
 
-Info here...
+analog/digital touch sensor A0 is anlog pin, "G" is ground ", "+" is 5v posative, D0 pin is the digital 
 
-### Magnetic Switch
+### Magnetic Reed Module
 
-Info here...
-
+analog/digital magnetic reed sensor that open or close when exposed to a magnetic feild A0 is anlog pin, "G" is ground ", "+" is 5v posative, D0 pin is the digital red LED signals when magnet is near
+ 
 ### RGB LED (flat)
 
-Info here...
-
-### Magnetic Switch
-
-Info here...
+"-" symbol is ground, "R" symbol is green posative, "G" symbol is red posative, and "B" symbol is blue posative
 
 ### Light Cup
 
-Info here...
+didgital gravity powered mercury switch, LED on switch does not appear to work tried 4 different sensors to test "G" is ground ", "+" is 5v posative S is digital signal(works), " L" is 5v led which appears to not work
 
 ### Infrared Emission Sensor
 
