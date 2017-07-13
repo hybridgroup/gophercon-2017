@@ -145,3 +145,11 @@ Info here...
 ### LED
 
 Info here...
+
+### 1-Wire Temperature Sensor
+
+Not yet supported... help wanted!
+
+### 1-Wire Temperature/Humidity Sensor
+
+Not yet supported... help wanted!
