@@ -12,7 +12,7 @@ module that can be used with analog signal to measure sound threshold and/or wit
 
 ### Light Sensor
 
-analog luminescence detection module
+analog photo luminescence resister module for detecting light
 
 ### Magnetic Sensor - Digital
 
@@ -32,7 +32,7 @@ analog module that is sensative to how near or far a magnet is detected
 
 ### Temperature Sensor
 
-5v module ground is on the "-" symbol 5v is the center pin,and signal is analog on the "s" labeled pin... Need to do proper math to get correct temperature
+analog temperature sensor 5v module ground is on the "-" symbol 5v is the center pin,and signal is analog on the "s" labeled pin... Need to do proper math to get correct temperature
 
 ### Magnetic Sensor - Module
 
