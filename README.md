@@ -6,7 +6,11 @@ This is the information for the Gobot (https://gobot.io) community day for 2017.
 
 We have a lot of gear for you to use at today's hardware party. If you are one of the lucky 150 individuals who arrives early enough, you will receive a brand new Gobot Starter Kit featuring the Intel TinyTILE!
 
-If we run out of equipment, we ask that those who have received gear pair up with those who have not. Thank you!
+For more info on the Gobot Starter Kit, check out:
+
+[./starterkit/README.md](./starterkit/README.md)
+
+PLEASE NOTE: If we run out of equipment, we ask that those who have received gear pair up with those who have not. Thank you!
 
 ## Lending Lab Gear
 
