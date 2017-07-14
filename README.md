@@ -22,15 +22,6 @@ We have also brought a bunch of other equipment for you to try out, and then ret
    - Makey-Makeys
    - Leap Motion Gestural Controllers
 
-## Bounties
-
-Like last year, we have some equipment "bounties". If you can contribute back to Gobot by adding software support you can take home one of the following awesome new devices:
-
-   - GoPiGo3 Raspberry Pi powered Robot
-   - Holy Stone HS220 Drone
-   - Ultrasonic Rangefinder
-   - Stepper Motor Controller
-
 ## Gophercon Gobot Challenges
 
 We have some self-directed "challenges" that you can follow along with using the Gobot Starter Kit, the Parrot Minidrone, and the Sphero SPRK+.
@@ -46,6 +37,12 @@ Uses the Parrot Minidrone along with a PS3 controller.
 ### Rover
 
 Uses the Sphero SPRK+
+
+## Bounties
+
+Like last year, we have some equipment "bounties". If you can contribute back to Gobot by adding software support for that platform, you could take home one of several awesome new devices, such as a GoPiGo3 Raspberry Pi powered Robot. For more info, go to:
+
+[./bounties/README.md](./bounties/README.md)
 
 ## License
 
