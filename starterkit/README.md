@@ -92,7 +92,7 @@ digital tilt sensor "-" is negative, "s" pin is the digital signal pin and the m
 
 ### Relay
 
-Info here...
+digital relay with red led to signal open / close... I couln't get the output to light an led properly may need to test more  "-" is negative, "s" pin is the digital signal pin and the middle pin is 5v positive
 
 ### Active Buzzer X2
 
@@ -100,15 +100,15 @@ digital buzzer... one buzzer works correctly and the other buzzer "-" symbol == 
 
 ### Push Button
 
-Info here...
+simple push putton two modes either pushed or not pushed "-" is negative, "s" pin is the digital signal pin and the middle pin is 5v positive
 
 ### Joystick
 
-Info here...
+need to write a proper driver "gnd" is ground, "+5v" is 5v, "vrx" is x axis, "vry" is y axis, sw is presssing the button in
 
 ### Optical Break Sensor
 
-Info here...
+not working atm with current tests
 
 ### Obstacle Avoidance Sensor 1
 
