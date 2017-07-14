@@ -112,36 +112,64 @@ not working atm with current tests
 
 ### Obstacle Avoidance Sensor 1
 
-Info here...
+digital ir motion sensor "gnd" is ground, "+" is 5v out is digital  signal cable
 
-### Obstacle Avoidance Sensor 2
+### Line Finder
 
-Info here...
+digital line finder follows black line, need small flathead to adjust the sensativity, "g" is ground, "v+" is 5v positive, "s" is digital signal cable
 
 ### Fingerprint Heartbeat Detector
 
-Info here...
+needs math to work correctly
+
+
+// Pulse Monitor Test Script
+int sensorPin = 0;
+double alpha = 0.75;
+int period = 100;
+double change = 0.0;
+double minval = 0.0;
+void setup ()
+{
+  Serial.begin (9600);
+}
+void loop ()
+{
+    static double oldValue = 0;
+    static double oldChange = 0;
+ 
+    int rawValue = analogRead (sensorPin);
+    double value = alpha * oldValue + (1 - alpha) * rawValue;
+ 
+    Serial.print (rawValue);
+    Serial.print (",");
+    Serial.println (value);
+    oldValue = value;
+ 
+    delay (period);
+}
 
 ### Motion Sensor
 
-Info here...
-
-### Rotary Encoder
-
-Info here...
+???
 
 ### LASER
 
-Info here...
+digital red laser "-" is ground, middle wire is 5v positive, "s" is digital signal cable
 
 ### LED
 
-Info here...
+LED appears not to work
 
 ### 1-Wire Temperature Sensor
 
-Not yet supported... help wanted!
+Not yet supported... help wanted! Ask us
 
 ### 1-Wire Temperature/Humidity Sensor
 
-Not yet supported... help wanted!
+Not yet supported... help wanted! Ask us
+
+### Rotary Encoder
+
+not yet supported... help wanted! Ask us
+looking for pulse encoding support
