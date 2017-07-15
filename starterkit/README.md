@@ -121,7 +121,7 @@ digital line finder follows black line, need small flathead to adjust the sensat
 ### Fingerprint Heartbeat Detector
 
 needs math to work correctly
-
+this is what it looks like in arduino code
 
 // Pulse Monitor Test Script
 int sensorPin = 0;
