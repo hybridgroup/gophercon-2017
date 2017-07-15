@@ -25,6 +25,10 @@ https://github.com/lancecaraccioli/holystone-hs110w
 
 Your mission is to add a Gobot adaptor/driver for the HS110W/HS220 so we can run Gobot as a ground control station to control the drone.
 
+## MCU Bounty
+
+Add anything else to Gobot, and we have an ESP8266 WiFi-connect microcontroller for you to take home and hack with. Yes!
+
 ## Ultrasonic Rangefinder
 
 ## Stepper Motor Controller
