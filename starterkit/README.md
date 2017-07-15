@@ -50,19 +50,19 @@ analog temperature sensor 5v module ground is on the "-" symbol 5v is the center
 
 ### Magnetic Sensor - Module
 
-![](../images/starterkit/analog-digital-magnetic-sensor.png)
+![](../images/starterkit/anaolg-digital-magnetic-feild-sensor.png)
 
 analog/digital magnetic feild module 5v red signal led included. A0 is anlog pin, "G" is ground ", "+" is 5v posative, D0 pin is the digital pin for this module
 
 ### Temperature Sensor - Module
 
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/analog-digital-temperature-sensor.png)
 
 analog/digital temperature sensor A0 is anlog pin, "G" is ground ", "+" is 5v posative, D0 pin is the digital pin for this module math needs work to get correct temp
 
 ### Touch Sensor - Module
 
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/analog-digital-touch-sensor.png)
 
 analog/digital touch sensor A0 is anlog pin, "G" is ground ", "+" is 5v posative, D0 pin is the digital 
 
