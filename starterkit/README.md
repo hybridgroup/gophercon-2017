@@ -202,7 +202,7 @@ void loop ()
 ### Motion Sensor
 ![](../images/starterkit/digital-ir-motion-sensor.png)
 
-???
+appears to be an ir motion detector
 
 ### LASER
 ![](../images/starterkit/digital-laser-red.png)
