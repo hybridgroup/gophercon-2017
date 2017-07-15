@@ -39,7 +39,7 @@ On a breadboard, all of the pins in a horizontal row are connected to each other
 
 ### step1.go - Blue LED
 
-![Gobot](../../images/tinytile/step1.jpg)
+![Gobot](images/airlockstep1.jpg)
 
 - Plug the RGB LED's blue pin "B" to the first row of pins on the breadboard on the right. Plug the RGB LED's ground pin "-" to the GROUND RAIL on the breadboard very bottom right.
 
