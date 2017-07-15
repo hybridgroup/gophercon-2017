@@ -4,103 +4,149 @@ The starter kit for the Gophercon 2017 Community Day!
 
 ## Intel TinyTILE
 
+The Intel TinyTILE is a small 3.3 volt microcontroller based on the Intel Curie System on Chip (SoC). It is Arduino-compatible, and also has a built-in 6-axis accelerometer, Bluetooth LE radio, and even a small neural net processor.
+
+For info on Gobot support for the Intel Curie based boards (TinyTILE and Arduino 101) go to:
+
+[https://gobot.io/documentation/platforms/curie/](https://gobot.io/documentation/platforms/curie/)
+
 ## Sensor Kit
+
+The Gobot Starter Kit includes 37 different small sensor or actuator boards. Some of them are variations of single sensor, but including some extra electronics for a specific use case, such as a digital threshold trigger.
 
 ### Sound Sensor
 
 ![](../images/starterkit/analog-digital-sound-sensor.png)
 
-module that can be used with analog signal to measure sound threshold and/or with digital to detect if sound was made
+This module can produce an analog signal to measure the sound threshold detected by the small microphone. This is not a good enough mic to actually record sound.
+
+In addition, the module sends a digital trigger, similar to how a button triggers when sound is detected. The threshold can be set using the small screw on the blue box.
 
 ### Light Sensor
 
 ![](../images/starterkit/photo-resistor-sensor.png)
 
-analog photo luminescence resister module for detecting light
+This module can produce an analog signal to measure the light level using  a small photo luminescence resistor.
 
 ### Magnetic Sensor - Digital
 
 ![](../images/starterkit/digital-magnetic-sensor.png)
 
-digital module with an led to detect the presence of a magnetic field
+This module can produce an digital signal to detect the presence of a very near magnetic field.
 
 ### Magnetic Sensor - Analog
 
 ![](../images/starterkit/digital-magnetic-sensor.png)
 
-analog module that is sensative to how near or far a magnet is detected 
+This module can produce an analog signal to detect how near or far away is the presence of a very near magnetic field.
 
 ### Red/Green LED - Small
 
 ![](../images/starterkit/red-green-led.png)
 
-"-" symbol is the ground, middle pin is the posative for green and the end labeled "s" is the posative for the green
+This module is a combination red and greed LED.
+
+"-" symbol is the ground pin, the middle pin is the positive for green and the end labeled "s" is the positive pin for red.
 
 ### Red/Green LED - Large
 
 ![](../images/starterkit/red-green-led.png)
 
-"-" symbol is the ground, middle pin is the posative for green and the end labeled "s" is the posative for the green
+This module is another larger combination red and greed LED.
+
+"-" symbol is the ground pin, the middle pin is the positive for green and the end labeled "s" is the positive pin for red.
 
 ### Temperature Sensor
 
 ![](../images/starterkit/analog-temperature-sensor.png)
 
-analog temperature sensor 5v module ground is on the "-" symbol 5v is the center pin,and signal is analog on the "s" labeled pin... Need to do proper math to get correct temperature
+This module can produce an analog signal to measure the ambient temperature.
+
+The ground pin is on the "-" symbol. The 5V is the center pin, and signal is an analog voltage on the "s" labeled pin. You will need to convert this voltage to determine the correct temperature from the voltage.
 
 ### Magnetic Sensor - Module
 
 ![](../images/starterkit/anaolg-digital-magnetic-feild-sensor.png)
 
-analog/digital magnetic feild module 5v red signal led included. A0 is anlog pin, "G" is ground ", "+" is 5v posative, D0 pin is the digital pin for this module
+This module can produce an analog signal to detect how near or far away is the presence of a very near magnetic field.
+
+In addition, the module sends a digital trigger, similar to how a button triggers when a magnet is detected. The threshold can be set using the small screw on the blue box.
+
+There is a red led included on the board which turns on when magnet is detected. The "A0" is the analog signal pin, "G" is ground ", "+" is 5v positive, and "D0" digital trigger pin for this module.
 
 ### Temperature Sensor - Module
 
 ![](../images/starterkit/analog-digital-temperature-sensor.png)
 
-analog/digital temperature sensor A0 is anlog pin, "G" is ground ", "+" is 5v posative, D0 pin is the digital pin for this module math needs work to get correct temp
+This module can produce an analog signal to measure the ambient temperature. You will need to convert the analog voltage to determine the correct temperature from the voltage.
+
+In addition, the module sends a digital trigger, similar to how a button triggers when a threshold of temperature is detected. The threshold can be set using the small screw on the blue box.
+
+The "A0" is analog pin, "G" is ground pin, "+" is 5v positive pin, "D0" pin is the digital trigger pin for this module.
 
 ### Touch Sensor - Module
 
 ![](../images/starterkit/analog-digital-touch-sensor.png)
 
-analog/digital touch sensor A0 is anlog pin, "G" is ground ", "+" is 5v posative, D0 pin is the digital 
+This module can produce an analog signal to measure when it is touched.
+
+In addition, the module sends a digital trigger, similar to how a button triggers when touch is detected. The threshold can be set using the small screw on the blue box.
+
+The "A0" pin is analog pin, "G" is ground pin, "+" is 5v positive pin, "D0" pin is the digital trigger pin.
 
 ### Magnetic Reed Module
 
 ![](../images/starterkit/analog-digital-magnetic-reed-sensor.png)
 
-analog/digital magnetic reed sensor that open or close when exposed to a magnetic feild A0 is anlog pin, "G" is ground ", "+" is 5v posative, D0 pin is the digital red LED signals when magnet is near
- 
+This module can produce an analog signal to detect a magnet. It is known as a magnetic reed sensor.
+
+In addition, the module sends a digital trigger, similar to how a button triggers when magnetic field is detected. The threshold can be set using the small screw on the blue box.
+
+"A0" is analog signal pin, "G" is ground pin, "+" is 5v positive pin, "D0" pin is the digital trigger. There is also a built-in tiny red LED that signals when the magnet is near.
+
 ### RGB LED (flat)
 
 ![](../images/starterkit/rgb-flat-led.png)
 
-"-" symbol is ground, "R" symbol is green posative, "G" symbol is red posative, and "B" symbol is blue posative
+This module is a small flat RGB LED. Note that the pins on this board are mis-labeled.
+
+"-" symbol is ground pin, "R" symbol is GREEN positive pin, "G" symbol is RED positive pin, and "B" symbol is BLUE positive pin.
 
 ### Light Cup
 
 ![](../images/starterkit/digital-magic-cup-mercury-tilt-sensor.png)
 
-digital gravity powered mercury switch, LED on switch does not appear to work tried 4 different sensors to test "G" is ground ", "+" is 5v posative S is digital signal(works), " L" is 5v led which appears to not work
+This module is a digital gravity powered mercury switch. Note that the LED on switch does not appear to work.
+
+"G" is ground pin, "+" is 5v positive pin, "S" is digital signal, "L" is 5v led which appears not to work.
 
 ### Infrared Emission Sensor
 
 ![](../images/starterkit/analog-digital-ir-emmission-sensor.png)
 
-analog/digital infrared sensor 5v red signal led included. A0 is anlog pin, "G" is ground ", "+" is 5v posative, D0 pin is the digital pin for this module 
+This module is an analog/digital infrared sensor.
+
+In addition, the module sends a digital trigger, similar to how a button triggers when IR is detected. The threshold can be set using the small screw on the blue box.
+
+There is a small built-in 5v red signal LED included.
+
+"A0" is the analog pin, "G" is ground pin, "+" is 5v positive pin, "D0" pin is the digital pin for this module.
 
 ### RGB LED
 
 ![](../images/starterkit/rgb-led.png)
 
-this one has the correct labeling yay! "-" symbol is ground, "G" symbol is green posative, "R" symbol is red posative, and "B" symbol is blue posative
+This module is a small RGB LED.
+
+"-" symbol is ground pin, "G" symbol is GREEN positive pin, "R" symbol is red positive pin, and "B" symbol is blue positive pin.
 
 ### IR Sensor
 
 ![](../images/starterkit/digital-ir-reciever-sensor.png)
 
-digital infrared sensor "-" is negative, "s" pin is the digital signal pin and the middle pin is 5v positive
+This module is a IR light receiver such as that used by televisions.
+
+"-" is negative pin, "s" pin is the digital signal pin, and the middle pin is 5v positive.
 
 ### Magnetic Reed Switch
 
@@ -186,15 +232,15 @@ void loop ()
 {
     static double oldValue = 0;
     static double oldChange = 0;
- 
+
     int rawValue = analogRead (sensorPin);
     double value = alpha * oldValue + (1 - alpha) * rawValue;
- 
+
     Serial.print (rawValue);
     Serial.print (",");
     Serial.println (value);
     oldValue = value;
- 
+
     delay (period);
 }
 ```
