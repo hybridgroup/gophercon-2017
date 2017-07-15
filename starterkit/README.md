@@ -68,88 +68,88 @@ analog/digital touch sensor A0 is anlog pin, "G" is ground ", "+" is 5v posative
 
 ### Magnetic Reed Module
 
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/analog-digital-magnetic-reed-sensor.png)
 
 analog/digital magnetic reed sensor that open or close when exposed to a magnetic feild A0 is anlog pin, "G" is ground ", "+" is 5v posative, D0 pin is the digital red LED signals when magnet is near
  
 ### RGB LED (flat)
 
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/rgb-flat-led.png)
 
 "-" symbol is ground, "R" symbol is green posative, "G" symbol is red posative, and "B" symbol is blue posative
 
 ### Light Cup
 
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/digital-magic-cup-mercury-tilt-sensor.png)
 
 digital gravity powered mercury switch, LED on switch does not appear to work tried 4 different sensors to test "G" is ground ", "+" is 5v posative S is digital signal(works), " L" is 5v led which appears to not work
 
 ### Infrared Emission Sensor
 
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/analog-digital-ir-emmission-sensor.png)
 
 analog/digital infrared sensor 5v red signal led included. A0 is anlog pin, "G" is ground ", "+" is 5v posative, D0 pin is the digital pin for this module 
 
 ### RGB LED
 
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/rgb-led.png)
 
 this one has the correct labeling yay! "-" symbol is ground, "G" symbol is green posative, "R" symbol is red posative, and "B" symbol is blue posative
 
 ### IR Sensor
 
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/digital-ir-reciever-sensor.png)
 
 digital infrared sensor "-" is negative, "s" pin is the digital signal pin and the middle pin is 5v positive
 
 ### Magnetic Reed Switch
 
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/digital-magnetic-reed-sensor.png)
 
 digital magnetic reed switch "-" is negative, "s" pin is the digital signal pin and the middle pin is 5v positive
 
 ### Mercury Switch
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/digital-mercury-tilt-sensor-with-led.png)
 
 digital murcury switch with red LED, "-" is negative, "s" pin is the digital signal pin and the middle pin is 5v positive, tilt the switch to trigger the signal and the LED also turns on
 
 ### Hit Sensor - Module
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/digital-knock-hit-sensor.png)
 
 digital knock/hit sensor "-" is negative, "s" pin is the digital signal pin and the middle pin is 5v positive, the sensor is not sensitive must hit kinda hard to trigger
 
 ### Vibration Sensor
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/digital-vibration-sensor.png)
 
 Digital Vibration sensor "-" is negative, "s" pin is the digital signal pin and the middle pin is 5v positive
 
 ### Tilt Sensor
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/digital-tilt-sensor.png)
 
 digital tilt sensor "-" is negative, "s" pin is the digital signal pin and the middle pin is 5v positive
 
 ### Relay
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/digital-relay-with-led.png)
 
 digital relay with red led to signal open / close... I couln't get the output to light an led properly may need to test more  "-" is negative, "s" pin is the digital signal pin and the middle pin is 5v positive
 
 ### Active Buzzer X2
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/active-buzzer.png)
 
 digital buzzer... one buzzer works correctly and the other buzzer "-" symbol == positive
 
 ### Push Button
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/button.png)
 
 simple push putton two modes either pushed or not pushed "-" is negative, "s" pin is the digital signal pin and the middle pin is 5v positive
 
 ### Joystick
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/analog-joystick.png)
 
 need to write a proper driver "gnd" is ground, "+5v" is 5v, "vrx" is x axis, "vry" is y axis, sw is presssing the button in
 
 ### Optical Break Sensor
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/digital-optical-break-sensor.png)
 
 not working atm with current tests
 
@@ -165,12 +165,14 @@ digital line finder follows black line, need small flathead to adjust the sensat
 
 ### Fingerprint Heartbeat Detector
 
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/fingerprint-heartbeat-detector.png)
 
 needs math to work correctly
 this is what it looks like in arduino code
 
+```
 // Pulse Monitor Test Script
+
 int sensorPin = 0;
 double alpha = 0.75;
 int period = 100;
@@ -195,34 +197,35 @@ void loop ()
  
     delay (period);
 }
+```
 
 ### Motion Sensor
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/digital-ir-motion-sensor.png)
 
 ???
 
 ### LASER
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/digital-laser-red.png)
 
 digital red laser "-" is ground, middle wire is 5v positive, "s" is digital signal cable
 
 ### LED
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/led-no-resistor.png)
 
-LED appears not to work
+LED appears not to work may need resistor
 
 ### 1-Wire Temperature Sensor
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/digital-temp-sensor.png)
 
 Not yet supported... help wanted! Ask us
 
 ### 1-Wire Temperature/Humidity Sensor
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/humidity-temperature-sensor.png)
 
 Not yet supported... help wanted! Ask us
 
 ### Rotary Encoder
-![](../images/starterkit/analog-digital-sound-sensor.png)
+![](../images/starterkit/rotary-encoder.png)
 
 not yet supported... help wanted! Ask us
 looking for pulse encoding support
