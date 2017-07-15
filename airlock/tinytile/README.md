@@ -31,19 +31,19 @@ The Gobot program will use the serial interface to communicate with the connecte
 
 First connect the power on the TinyTILE to the breadboard as follows:
 
-- Connect the 5V power pin on the TinyTILE to the breadboard's red power rail (+) using a red jumper cable.
+- Connect the GND pin on the TinyTILE to the breadboard's very bottom row using a black jumper cable. We will refer to this row of pins as the "GROUND RAIL".
 
-- Connect the GND pin on the TinyTILE to the breadboard's blue ground rail (-) using a black jumper cable.
+- Connect the 5V power pin on the TinyTILE to the breadboard's second row from the bottom using a red jumper cable. We will refer to this row of pins as the "POWER RAIL".
+
+On a breadboard, all of the pins in a horizontal row are connected to each other. So when we have a wire connected to one pin in that row, if we connect another in that same row, then both are connected to each other.
 
 ### step1.go - Blue LED
 
 ![Gobot](../../images/tinytile/step1.jpg)
 
-- Plug a blue LED to pin 3 and pin 4 on the breadboard. Make sure the longer pin of the LED is plugged into pin 3. Any column on the breadboard (a-e) will work.
+- Plug the RGB LED's blue pin "B" to the first row of pins on the breadboard on the right. Plug the RGB LED's ground pin "-" to the GROUND RAIL on the breadboard very bottom right.
 
-- Connect pin 3 on the TinyTILE to pin 3 on the breadboard. Choose any color of cable besides red or black.
-
-- Connect pin 4 on the breadboard to the breadboard's blue ground rail (-) using a black jumper cable.
+- Connect pin 3 on the TinyTILE to the same first row of pins on the breadboard next to the blue LED's pin. Choose any color of cable besides red or black.
 
 - Discover what tty is being used by your connection: `ls /dev/tty.*`
 
@@ -91,7 +91,7 @@ Run the code.
 
 You can now point your web browser to `http://localhost:3000` and try out the [Robeaux](https://github.com/hybridgroup/robeaux) web interface.
 
-### step5.go - Blue LED, Button, Green LED, Cylon.js API, Buzzer, Additional Button
+### step5.go - Blue LED, Button, Green LED, Gobot API, Buzzer, Additional Button
 
 ![Gobot](../../images/tinytile/step5.jpg)
 
@@ -101,7 +101,7 @@ You can now point your web browser to `http://localhost:3000` and try out the [R
 
 - Connect pin 7 on the TinyTILE to pin 16 on the left side of the breadboard.
 
-- Connect a second button to the breadboard so one side connects to pins 19 and 21 on one side of the gap, and connects to pins 19 and 21 on the other side of the gap.
+- Connect the touch sensor to the breadboard so one side connects to pins 19 and 21 on one side of the gap, and connects to pins 19 and 21 on the other side of the gap.
 
 - Connect a red jumper cable from the power rail (+) on the breadboard to pin 19 on the breadboard.
 
