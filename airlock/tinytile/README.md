@@ -55,15 +55,11 @@ You should see the blue LED blink.
 
 ![Gobot](../../images/tinytile/step2.jpg)
 
-- Connect the button to the breadboard so one side connects to pins 7 and 9 on one side of the gap, and connects to pins 7 and 9 on the other side of the gap.
+- Connect pin 2 from the TinyTile to the signal pin (S) on the button.
 
-- Connect a red jumper cable from the power rail (+) on the breadboard to pin 7 on the breadboard.
+- Connect a red jumper cable from the power rail (+) on the breadboard to the middle pin on the button.
 
-- Connect a 10K Ohm resistor from pin 9 on the breadboard to pin 11 on the breadboard.
-
-- Connect a black jumper cable from the ground rail (-) on the breadboard to pin 23 on the breadboard.
-
-- Connect pin 8 on the TinyTILE to pin 9 on the breadboard on the opposite side. Choose any color of cable besides red or black.
+- Connect a black jumper cable from the ground rail (-) on the breadboard to ground pin (2) on the button.
 
 Run the code.
 
