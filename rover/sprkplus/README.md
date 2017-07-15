@@ -1,4 +1,6 @@
-# Rover - Sphero Ollie
+# Rover - Sphero SPRK+
+
+The Sphero SPRK+ uses the same BLE API at the Sphero BB-8 and Sphero Ollie.
 
 ## Installation
 
@@ -14,7 +16,7 @@ To compile/run the code, substitute the name of your Ollie or BB-8 as needed.
 ### OS X
 
 ```
-$ GODEBUG=cgocheck=0 go run 1-color.go BB-128E
+$ go run 1-color.go BB-128E
 ```
 
 ### Linux
