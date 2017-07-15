@@ -69,11 +69,9 @@ When you press the button, the blue LED should turn on.
 
 ![Gobot](../../images/tinytile/step3.jpg)
 
-- Plug a green LED to pin 13 and pin 14 on the breadboard. Make sure the longer pin of the LED is plugged into pin 13.
+- Plug a green jumper from pin 4 on the TinyTile to the middle pin on the Green LED.
 
-- Connect pin 4 on the TinyTILE to pin 13 on the breadboard. Choose any color of cable besides red or black.
-
-- Connect pin 14 on the breadboard to the breadboard's blue ground rail (-) using a black jumper cable.
+- Connect a jumper form the ground rail (-) on the breadboard to the blue LED's ground pin (-) using a black jumper cable.
 
 Run the code.
 

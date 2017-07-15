@@ -35,13 +35,13 @@ func main() {
 	work := func() {
 		Reset()
 
-		button.On(gpio.ButtonPush, func(data interface{}) {
+		button.On(gpio.ButtonRelease, func(data interface{}) {
 			TurnOff()
 			fmt.Println("On!")
 			blue.On()
 		})
 
-		button.On(gpio.ButtonRelease, func(data interface{}) {
+		button.On(gpio.ButtonPush, func(data interface{}) {
 			Reset()
 		})
 	}
